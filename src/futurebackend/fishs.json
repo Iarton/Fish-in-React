@@ -1,0 +1,16 @@
+{
+"number":2,
+"fish":
+    [
+        {
+            "fish": "Salmon",
+            "minSize": 3,
+            "maxSize": 5
+        },
+        {
+            "fish": "Sturgeon",
+            "minSize": 6,
+            "maxSize": 12
+        }
+    ]
+}
