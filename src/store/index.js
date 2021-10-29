@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import fishSlice from './slices/fishSlice';
+import fish from './slices/fishSlice';
 
 const reducer = combineReducers({
-    fishSlice
-})
+  fish
+});
 const store = configureStore({
   reducer,
-})
+});
 export default store;

@@ -1,12 +1,15 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {Field, Form, Formik} from 'formik';
-import {setAttributes} from './store/fishSlice';
+/*import {Field, Form, Formik} from 'formik';
+import {setAttributes} from './store/fishSlice';*/
 
 const FishMenu = () => {
   const dispatch = useDispatch()
-  const { user } = useSelector(state => state.fishSlice)
+  const { fish } = useSelector(state => state);
+
 
   const handleFindClick = () => {
+    console.log(fish);
+
     dispatch({ type: 'find_spot' });
 };
 

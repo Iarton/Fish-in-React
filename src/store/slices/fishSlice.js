@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import {findFishLocation} from '../../futurebackend/fish';
 
 const initialState = {
+  fishState:{
     fish: null,
     location: 0,
     fishingSkill: 0,
-    equipment: 0
+    equipment: 0}
 };
 
 const fishSlice = createSlice({
