@@ -6,7 +6,7 @@ This project is made by me just because i want to code it, it is a fishing mini 
 
 Fishing is a simple three steep game:
 
-### - Find a Location;
+### - Find a Location [70%];
 
     The player roll 1d20 plus Intelligence or Perception, which one is higher, if the result is less than 6 and
     even, the fisherman thinks he find a nice spot, if it is less than 6 and odd, he believes it is a bad spot. If is between 6 and 10
@@ -14,7 +14,7 @@ Fishing is a simple three steep game:
     If is between 16 and 19, he knows what species can be found in there.
     If is 20 or more, he finds the best possible spot.
 
-### - Cast the Line;
+### - Cast the Line; [50%]
 
     The Player rolls 1d20 plus their fishing skill, plus location, plus Strength, expertise or agility, the highest of the three.
     Result <6: 20 minutes lost and the player must recast the line
@@ -54,7 +54,7 @@ Fishing is a simple three steep game:
 
 ## - To do;
 
-    - Add all rules as written [25%]
+    - Add all rules as written [40%]
     - Beautify everything [0%]
     - Add back-end [0%]
     - Make more modular [0%]
