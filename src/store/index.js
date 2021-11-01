@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import fish from './slices/fishSlice';
+import fish from './fish/slice/index';
 
 const reducer = combineReducers({
   fish

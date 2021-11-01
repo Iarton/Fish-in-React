@@ -21,7 +21,6 @@ function fishRarity() {
 }
 
 export function findFishLocation(attribute = 0) {
-  const location = randomBetween(0 + attribute, 20);
-  console.log(location);
+  const location = randomBetween(0, 20) + attribute;
   return location;
 }
