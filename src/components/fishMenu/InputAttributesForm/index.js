@@ -23,7 +23,17 @@ const InputAttributesForm = () => {
             Habilidade de Pesca: <Field type="number" name="fishingSkill" />
           </div>{" "}
           <div>
-            Equipamento: <Field type="number" name="equipment" />
+            Inteligencia ou Percepção: <Field type="number" name="locationSkill" />
+          </div>{" "}
+          <div>
+            Força, Agilidade ou Pericia: <Field type="number" name="castSkill" />
+          </div>{" "}
+          Equipamento
+          <div>
+            Linha: <Field type="number" name="line" />
+          </div>
+          <div>
+            Isca: <Field type="number" name="hook" />
           </div>
           <button type="submit" disabled={isSubmitting}>
             Salvar Bonus
