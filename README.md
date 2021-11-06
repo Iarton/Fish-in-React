@@ -14,7 +14,7 @@ Fishing is a simple three steep game:
     If is between 16 and 19, he knows what species can be found in there.
     If is 20 or more, he finds the best possible spot.
 
-### - Cast the Line; [50%]
+### - Cast the Line; [100%]
 
     The Player rolls 1d20 plus their fishing skill, plus location, plus Strength, expertise or agility, the highest of the three.
     Result <6: 20 minutes lost and the player must recast the line
@@ -54,8 +54,8 @@ Fishing is a simple three steep game:
 
 ## - To do;
 
-    - Add all rules as written [40%]
-    - Beautify everything [0%]
+    - Add all rules as written [55%]
+    - Beautify everything [10%]
     - Add back-end [0%]
     - Make more modular [0%]
     - Make more interactive [0%]

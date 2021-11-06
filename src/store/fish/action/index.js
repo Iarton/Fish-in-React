@@ -11,10 +11,10 @@ export const calcLocationBonus = (fishingSkill) => async (dispatch) => {
   }
 };
 
-export const calcFishSize = (fishingSkill, castSkill, locationBonus) => async (dispatch) => {
+export const castLine = (fishingSkill, castSkill, locationBonus, hookBonus) => async (dispatch) => {
   try {
-    const castReturn = await castTheLine(fishingSkill, castSkill, locationBonus);
-    dispatch(setFishSize(castReturn.size));
+    const castReturn = await castTheLine(fishingSkill, castSkill, locationBonus, hookBonus);
+    dispatch(setFishSize(castReturn));
   } catch (e) {
     return console.error(e.message);
   }

@@ -25,19 +25,37 @@ export function findFishLocation(attribute = 0) {
   return { location: location, message: "Lugar" };
 }
 
-export function castTheLine(fishingSkill, castSkill, locationBonus) {
-  const castResult =
+export function castTheLine(fishingSkill, castSkill, locationBonus, hookBonus) {
+  const sizeResult =
     randomBetween(0, 20) + fishingSkill + castSkill + locationBonus;
-
-  if (castResult >= 6 && castResult <= 10) {
-    return { size: "Sm" };
-  } else if (castResult >= 11 && castResult <= 15) {
-    return { size: "Md" };
-  } else if (castResult >= 16 && castResult <= 19) {
-    return { size: "Bg" };
-  } else if (castResult >= 20) {
-    return { size: "Ms" };
+  let size = "Nt";
+  if (sizeResult >= 6 && sizeResult <= 10) {
+    size = "Sm";
+  } else if (sizeResult >= 11 && sizeResult <= 15) {
+    size = "Md";
+  } else if (sizeResult >= 16 && sizeResult <= 19) {
+    size = "Bg";
+  } else if (sizeResult >= 20) {
+    size = "Ms";
   }
 
-  return { size: "Tr" };
+  if (size === "Nt") {
+    return { size, rarity: null };
+  }
+
+  const rarityResult = randomBetween(0, 20) + fishingSkill + hookBonus;
+  let rarity = "Tr";
+  if (rarityResult >= 5 && rarityResult <= 11) {
+    rarity = "Cm";
+  } else if (rarityResult >= 12 && rarityResult <= 14) {
+    rarity = "Unc";
+  } else if (rarityResult >= 15 && rarityResult <= 17) {
+    rarity = "Rr";
+  } else if (rarityResult >= 18 && rarityResult <= 19) {
+    rarity = "Epc";
+  }else if (rarityResult >= 20) {
+    rarity = "Lg";
+  }
+
+  return { size, rarity };
 }

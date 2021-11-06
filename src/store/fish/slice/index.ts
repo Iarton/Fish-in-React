@@ -47,7 +47,8 @@ const fishSlice = createSlice({
       state.location.id = action.payload.bodyOfWater;
     },
     setFishSize: (state, action) => {
-      state.fish.size = action.payload;
+      state.fish.size = action.payload.size;
+      state.fish.rarity = action.payload.rarity;
     },
   },
 });

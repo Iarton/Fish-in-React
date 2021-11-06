@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Field, Form, Formik } from "formik";
 import { setAttributes } from "../../../store/fish/action";
+import { Grid } from "@material-ui/core";
 
 const initialForm = {
   fishingSkill: 0,
@@ -8,7 +9,7 @@ const initialForm = {
   castSkill: 0,
   line: 0,
   hook: 0,
-  bodyOfWater: 1
+  bodyOfWater: 1,
 };
 
 const InputAttributesForm = () => {
@@ -21,36 +22,46 @@ const InputAttributesForm = () => {
         dispatch(setAttributes(values));
       }}
     >
-      {({ isSubmitting }) => (
+      {
+        //({ isSubmitting }) => (
         <Form>
-          <div>
-            Habilidade de Pesca: <Field type="number" name="fishingSkill" />
-          </div>{" "}
-          <div>
-            Inteligencia ou Percepção:{" "}
-            <Field type="number" name="locationSkill" />
-          </div>{" "}
-          <div>
-            Força, Agilidade ou Pericia:{" "}
-            <Field type="number" name="castSkill" />
-          </div>{" "}
-          Equipamento
-          <div>
-            Linha: <Field type="number" name="line" />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <h2>Atributos do Jogador</h2>
           </div>
-          <div>
-            Isca: <Field type="number" name="hook" />
-          </div>
+          <Grid container spacing={3}>
+            <Grid item xs={3}>
+              Pesca: <Field type="number" name="fishingSkill" />
+            </Grid>
+            <Grid item xs={4}>
+              IT / PC: <Field type="number" name="locationSkill" />
+            </Grid>
+            <Grid item xs={5}>
+              FÇ / AG / PR: <Field type="number" name="castSkill" />
+            </Grid>
+          </Grid>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <h2>Atributos do Equipamento</h2>
+            </div>
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              Linha: <Field type="number" name="line" />
+            </Grid>
+            <Grid item xs={6}>
+              Isca: <Field type="number" name="hook" />
+            </Grid>
+          </Grid>
+
           <Field as="select" name="bodyOfWater">
-             <option value="1">Lago dos dois gostos</option>
-             <option value="2">Mar</option>
-             <option value="3">Praia</option>
-           </Field>
-          <button type="submit" disabled={isSubmitting}>
+            <option value="1">Lago dos dois gostos</option>
+            <option value="2">Mar</option>
+            <option value="3">Praia</option>
+          </Field>
+          <button type="submit" /*disabled={isSubmitting}*/>
             Salvar Bonus
           </button>
         </Form>
-      )}
+        // )
+      }
     </Formik>
   );
 };
