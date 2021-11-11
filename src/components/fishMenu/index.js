@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import InputAttributesForm from "./InputAttributesForm/index";
-import { calcLocationBonus, castLine } from "../../store/fish/action/index";
+import CastStep from "./castStep/index";
+import FindSpotStep from "./findSpotStep/index";
 import {
   AccessibilityNew,
   LocationSearching,
@@ -15,27 +16,8 @@ import {
 } from "@material-ui/core";
 
 const FishMenu = () => {
-  const dispatch = useDispatch();
   const { fish } = useSelector((state) => state);
   const [step, setStep] = useState(0);
-
-  const handleFindClick = async () => {
-    const message = await dispatch(
-      calcLocationBonus(fish.playerAttributes.locationSkill)
-    );
-    console.log(message);
-  };
-
-  const handleCastClick = async () => {
-    dispatch(
-      castLine(
-        fish.playerAttributes.fishingSkill,
-        fish.playerAttributes.castSkill,
-        fish.location.bonus,
-        fish.equipment.hook
-      )
-    );
-  };
 
   const handleCheckState = () => {
     console.log(fish);
@@ -73,36 +55,9 @@ const FishMenu = () => {
         <BottomNavigationAction label="Pescar" icon={<BluetoothSearching />} />
       </BottomNavigation>
 
-      {step === 0 && (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <InputAttributesForm />
-        </div>
-      )}
-      {step === 1 && (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Button
-            type="button"
-            onClick={handleFindClick}
-            color="primary"
-            variant="contained"
-            style={{ display: "flex-center" }}
-          >
-            Find a nice Spot
-          </Button>
-        </div>
-      )}
-      {step === 2 && (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Button
-            type="button"
-            onClick={handleCastClick}
-            color="primary"
-            variant="contained"
-          >
-            Cast the line
-          </Button>
-        </div>
-      )}
+      {step === 0 && <InputAttributesForm />}
+      {step === 1 && <FindSpotStep />}
+      {step === 2 && <CastStep />}
 
       {fish?.fish?.size}
     </>
